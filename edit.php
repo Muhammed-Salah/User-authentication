@@ -1,0 +1,30 @@
+<?php
+session_start();
+    $editid=$_SESSION['eid'];
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $gender=$_POST['gender'];
+    $phno=$_POST['phno'];
+
+    $conn=mysqli_connect('localhost','root','','my');
+    if (!$conn) 
+    {
+        echo "not connected";
+    }
+    else
+    {
+        echo "<script>alert($editid)</script>";
+        // $sql2="UPDATE `user` SET `gender` = 'male' WHERE `user`.`id` = '$editid';";
+        // $result2=mysqli_query($conn,$sql2);
+        // if($result2)
+        // {
+        //     echo "<script>alert('Edited Successfully')</script>";
+        //     // header("Location: users.php");
+        // }
+        // else
+        // {
+        //     echo "<script>alert('Editing Failed')</script>";
+        //     // echo "<script>window.history.go(-1)</script>";
+        // }
+    }
+?>

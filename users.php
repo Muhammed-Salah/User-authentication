@@ -23,18 +23,21 @@
                 while($row = mysqli_fetch_array($result))
                 {
                         echo "<tr><td>" . $row['id'] . "</td><td>"
-                                        . $row['lname'] . "</td><td>"
+                                        . $row['fname'] . "</td><td>"
                                         . $row['lname'] . "</td><td>" 
                                         . $row['gender'] . "</td><td>" 
                                         . $row['phno'] . "</td></tr>"; 
                 }
-                echo "Enter the ID whose data you want to change: ";
-                echo "<form name='eform' action='edited.php' method='post'>";
-                echo "<script><input type='text' name='editedid'></script>";
-                echo "<br>";
-                echo "<input type='submit'>";
             }
 		?>
-	</p>
+    </p>
+    <p>
+    <form name="eform" method="POST" action="edited.php">
+        Enter the ID whose data you want to change:    
+        <input type="text" name="editedid">
+        <br>
+        <input type="submit">
+    </form>
+    </p>
 </body>
 </html>
