@@ -15,15 +15,15 @@
         echo "<script>alert($editid.$fname.$lname.$gender.$phno)</script>";
         // $sql2="UPDATE `user` SET `fname` = '$fname', `lname` = '$lname', `gender` = '$gender', `phno` = '$phno' WHERE `user`.`id` = '$editid';";
         // $result2=mysqli_query($conn,$sql2);
-        // if($result2!=NULL)
-        // {
-        //     echo "<script>alert('Editing Failed')</script>";
-        //     echo "<script>window.history.go(-1)</script>";
-        // }
-        // else
+        // if($result2)
         // {
         //     echo "<script>alert('Edited Successfully')</script>";
         //     header("Location: users.php");
+        // }
+        // else
+        // {
+        //     echo "<script>alert('Editing Failed')</script>";
+        //     echo "<script>window.history.go(-1)</script>";
         // }
     }
 ?>
