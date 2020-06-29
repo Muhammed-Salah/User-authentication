@@ -1,5 +1,7 @@
 
 <?php
+	session_start();
+	
 	$email=$_POST['email'];
 	$pswd=$_POST['password'];
 
@@ -17,14 +19,14 @@
 		{	
 			if ($email == $row['email'] And $pswd == $row['password']) 
 			{
-				$_SESSION['email']=$email;
+				$_SESSION["email"]=$email;
      	   		echo "Success";
         		header("Location: Profile.php");
     		} 
     		else 
     		{
        			echo "Failed";
-        		header("Location: pg1.html");
+        		header("Location: login.html");
     		}
     	}
     	else
