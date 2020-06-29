@@ -1,29 +1,26 @@
 <?php
-    $editid=$_GET['eidd'];
-    $fname=$_POST['fname'];
-    $lname=$_POST['lname'];
-    $gender=$_POST['gender'];
-    $phno=$_POST['phno'];
+    $editid=$_GET['id'];
+    $fname=$_GET['fname'];
+    $lname=$_GET['lname'];
+    $gender=$_GET['gender'];
+    $phno=$_GET['phno'];
 
-    $conn=mysqli_connect('localhost','root','','my');
-    if (!$conn) 
-    {
-        echo "not connected";
-    }
-    else
-    {
-        echo "<script>alert($editid.$fname.$lname.$gender.$phno)</script>";
-        // $sql2="UPDATE `user` SET `fname` = '$fname', `lname` = '$lname', `gender` = '$gender', `phno` = '$phno' WHERE `user`.`id` = '$editid';";
-        // $result2=mysqli_query($conn,$sql2);
-        // if($result2)
-        // {
-        //     echo "<script>alert('Edited Successfully')</script>";
-        //     header("Location: users.php");
-        // }
-        // else
-        // {
-        //     echo "<script>alert('Editing Failed')</script>";
-        //     echo "<script>window.history.go(-1)</script>";
-        // }
-    }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="edited.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $editid;?>">
+        <input name="fname" value="<?php echo $fname;?>">
+        <input name="lname" value="<?php echo $lname;?>">
+        <input name="gender" value="<?php echo $gender;?>">
+        <input name="phno" value="<?php echo $phno;?>">
+        <input type="submit">
+    </form>
+</body>
+</html>

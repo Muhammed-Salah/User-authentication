@@ -22,22 +22,17 @@
                 echo "<tr><td>" . "ID" . "</td><td>" . "First Name" . "</td><td>" . "Last Name" . "</td><td>" . "Gender" . "</td><td>" . "Phone no." . "</td></tr>";
                 while($row = mysqli_fetch_array($result))
                 {
+                        
                         echo "<tr><td>" . $row['id'] . "</td><td>"
                                         . $row['fname'] . "</td><td>"
                                         . $row['lname'] . "</td><td>" 
                                         . $row['gender'] . "</td><td>" 
-                                        . $row['phno'] . "</td></tr>"; 
+                                        . $row['phno'] . "</td><td>" 
+                                        . "<a href=edit.php?id=".$row['id']."&fname=".$row['fname']."&lname=". $row['lname']."&gender=". $row['gender']."&phno=". $row['phno'].">"."Edit</a>". "</td><td>"
+                                        ."</td></tr>"; 
                 }
             }
 		?>
-    </p>
-    <p>
-    <form name="eform" method="POST" action="edited.php">
-        Enter the ID whose data you want to change:    
-        <input type="text" name="editedid">
-        <br>
-        <input type="submit">
-    </form>
     </p>
 </body>
 </html>
