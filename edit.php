@@ -1,6 +1,5 @@
 <?php
-session_start();
-    $editid=$_SESSION['eid'];
+    $editid=$_GET['eidd'];
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
     $gender=$_POST['gender'];
@@ -13,18 +12,18 @@ session_start();
     }
     else
     {
-        echo "<script>alert($editid)</script>";
-        // $sql2="UPDATE `user` SET `gender` = 'male' WHERE `user`.`id` = '$editid';";
+        echo "<script>alert($editid.$fname.$lname.$gender.$phno)</script>";
+        // $sql2="UPDATE `user` SET `fname` = '$fname', `lname` = '$lname', `gender` = '$gender', `phno` = '$phno' WHERE `user`.`id` = '$editid';";
         // $result2=mysqli_query($conn,$sql2);
-        // if($result2)
+        // if($result2!=NULL)
         // {
-        //     echo "<script>alert('Edited Successfully')</script>";
-        //     // header("Location: users.php");
+        //     echo "<script>alert('Editing Failed')</script>";
+        //     echo "<script>window.history.go(-1)</script>";
         // }
         // else
         // {
-        //     echo "<script>alert('Editing Failed')</script>";
-        //     // echo "<script>window.history.go(-1)</script>";
+        //     echo "<script>alert('Edited Successfully')</script>";
+        //     header("Location: users.php");
         // }
     }
 ?>
