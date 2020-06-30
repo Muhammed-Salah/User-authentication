@@ -29,6 +29,7 @@
                                         . $row['gender'] . "</td><td>" 
                                         . $row['phno'] . "</td><td>" 
                                         . "<a href=edit.php?id=".$row['id']."&fname=".$row['fname']."&lname=". $row['lname']."&gender=". $row['gender']."&phno=". $row['phno'].">"."Edit</a>". "</td><td>"
+                                        . "<a href=delete.php?id=".$row['id'].">"."Delete</a>". "</td><td>"
                                         ."</td></tr>"; 
                 }
             }
