@@ -4,6 +4,7 @@
     $lname=$_GET['lname'];
     $gender=$_GET['gender'];
     $phno=$_GET['phno'];
+    include_once('database.php');
 
 ?>
 <!DOCTYPE html>

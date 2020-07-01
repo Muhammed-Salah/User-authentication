@@ -15,7 +15,7 @@
 	<p>Welcome
 		<br>
 		<?php
-			$conn=mysqli_connect('localhost','root','','my');
+			include_once('database.php');
 			if (!$conn) 
 			{
 				echo "not connected";

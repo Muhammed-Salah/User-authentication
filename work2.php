@@ -4,7 +4,7 @@
 	$email=$_POST['email'];
 	$pswd=$_POST['password'];
 
-	$conn=mysqli_connect('localhost','root','','my');
+	include_once('database.php');
 	if (!$conn) 
 	{
 		echo "not connected";
