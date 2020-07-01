@@ -1,12 +1,17 @@
 <?php
-		session_start();
+	session_start();
+	if(!isset($_SESSION['email'])){
+		header('location:login.php');
+	}
 ?>
+
 
 <html>
 <head>
 	<title>my account</title>
 </head>
 <body>
+	<a href="logout.php">Logout</a>
 	<p>Welcome
 		<br>
 		<?php

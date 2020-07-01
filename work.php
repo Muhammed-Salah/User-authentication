@@ -19,7 +19,7 @@
 		if($result)
 		{
 			echo "<script>alert('Successfull Now Log in')</script>";
-			echo "<script>window.history.go(-1)</script>";
+			header("Location: login.php");
 		}
 		else
 		{
