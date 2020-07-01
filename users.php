@@ -9,8 +9,8 @@
     <p>Welcome
 		<br>
 		<?php
-			$conn=mysqli_connect('localhost','root','','my');
-			if (!$conn) 
+			include_once('database.php');
+			if (!$conn)
 			{
 				echo "not connected";
 			}
@@ -22,15 +22,20 @@
                 echo "<tr><td>" . "ID" . "</td><td>" . "First Name" . "</td><td>" . "Last Name" . "</td><td>" . "Gender" . "</td><td>" . "Phone no." . "</td></tr>";
                 while($row = mysqli_fetch_array($result))
                 {
-                        
-                        echo "<tr><td>" . $row['id'] . "</td><td>"
-                                        . $row['fname'] . "</td><td>"
-                                        . $row['lname'] . "</td><td>" 
-                                        . $row['gender'] . "</td><td>" 
-                                        . $row['phno'] . "</td><td>" 
-                                        . "<a href=edit.php?id=".$row['id']."&fname=".$row['fname']."&lname=". $row['lname']."&gender=". $row['gender']."&phno=". $row['phno'].">"."Edit</a>". "</td><td>"
-                                        . "<a href=delete.php?id=".$row['id'].">"."Delete</a>". "</td><td>"
-                                        ."</td></tr>"; 
+                    ?>
+
+                                <tr>
+                                <td><?php echo $row['id'] ?></td>
+                                <td><?php echo $row['fname']  ?></td>
+                                <td><?php echo $row['lname'] ?></td>
+                                <td><?php echo $row['gender'] ?></td>
+                                <td><?php echo $row['phno'] ?></td>
+                                <td><a href=edit.php?id="$row['id']"&fname=".$row['fname']."&lname=". $row['lname']."&gender=". $row['gender']."&phno=". $row['phno'].">Edit</a></td><td>
+                                 <a href=delete.php?id=".$row['id'].">"."Delete</a>". "</td><td>"
+                                </td>
+                                </tr>
+
+                        <?php
                 }
             }
 		?>

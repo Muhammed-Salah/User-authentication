@@ -1,4 +1,5 @@
 <?php
+	include_once('database.php');
 	$fname=$_POST['fname'];
 	$lname=$_POST['lname'];
 	$gender=$_POST['gender'];
@@ -6,8 +7,8 @@
 	$pswd=$_POST['password'];
 	$phno=$_POST['phno'];
 
-	$conn=mysqli_connect('localhost','root','','my');
-	if (!$conn) 
+
+	if (!$conn)
 	{
 		echo "not connected";
 	}
