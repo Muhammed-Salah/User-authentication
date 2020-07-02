@@ -24,7 +24,6 @@
 		}
 		else
 		{
-			echo "<script>alert('Failed')</script>";
 			echo "<script>window.history.go(-1)</script>";
 		}
 	}

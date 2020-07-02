@@ -20,18 +20,19 @@
 			if ($email == $row['email'] And $pswd == $row['password']) 
 			{
 				$_SESSION["email"]=$email;
-     	   		echo "Success";
+				echo "<script>alert('Welcome')</script>";
         		header("Location: Profile.php");
     		} 
     		else 
     		{
-       			echo "Failed";
+				$_SESSION['error2']='wrongpassword';
         		header("Location: login.php");
     		}
     	}
     	else
     	{
-    		echo "Mail ID does not exist";
+			$_SESSION['error1']='wrongmailid';
+			header("Location: login.php");
     	}
 	}
 ?>

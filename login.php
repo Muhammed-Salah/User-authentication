@@ -1,6 +1,16 @@
+<?php
+	session_start();
+	if(isset($_SESSION['email'])){
+		header('location:Profile.php');
+	}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
+    <script language="JavaScript">
+      window.history.forward();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -33,13 +43,23 @@
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin" method="POST" action="work2.php">
-  <img class="mb-4" src="../2nd-project/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <form class="form-signin" method="POST" action="work2.php">
+    <img class="mb-4" src="../2nd-project/LOGIN-10-512.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+      <?phpif(isset($_SESSION['error1']))?>
+        <label class="text-danger">invalid email</label>
+      <?php unset($_SESSION["error1"]); ?>
+      
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <?php
+        if(isset($_SESSION['error2']))
+        echo '<label class="text-danger">invalid Password</label>';
+        unset($_SESSION["error2"]);
+      ?>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
